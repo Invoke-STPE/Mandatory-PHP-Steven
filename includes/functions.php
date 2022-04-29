@@ -24,7 +24,7 @@ function increment_user_visit($userName) {
     mysqli_query($dbc, $sqlUpdateVisitCount);
 }
 
-function update_user_information($userName, $fullName, $birthDay, $zodicSign, $favAnimal) {
+function update_user_information($userName, $fullName, $birthDate, $zodicSign, $favAnimal) {
     include('mysqli_connect.php');
     $userName = prepare_string($userName);
     $fullName = prepare_string($fullName);
@@ -38,7 +38,7 @@ function update_user_information($userName, $fullName, $birthDay, $zodicSign, $f
     return mysqli_affected_rows($dbc);
 }
 
-function create_user($userName, $fullName, $password, $birthDay, $zodicSign, $favAnimal){
+function create_user($userName, $fullName, $password, $birthDate, $zodicSign, $favAnimal){
     include('includes/mysqli_connect.php');
     $userName = prepare_string($userName);
     $fullName = prepare_string($fullName);
