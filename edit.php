@@ -1,6 +1,5 @@
 <?php 
 include('includes/functions.php');
-include('includes/mysqli_connect.php');
 
     if (!isset($_COOKIE['loggedin'])) {
         header("Location: http://localhost/mandatory/login.php");
