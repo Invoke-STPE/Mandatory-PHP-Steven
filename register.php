@@ -11,7 +11,9 @@
          !empty($_POST['zodicSign']) &&
          !empty($_POST['favAnimal'])){
 
-            $affectedRows = create_user($_POST['userName'], $_POST['fullName'], $_POST['password'], $_POST['birthDate'], $_POST['zodicSign'], $_POST['favAnimal']);
+          $encryptedPass = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+            $affectedRows = create_user($_POST['userName'], $_POST['fullName'], $encryptedPass, $_POST['birthDate'], $_POST['zodicSign'], $_POST['favAnimal']);
             if($affectedRows == 1){
                 header("Location: http://localhost/mandatory/index.php");
                 die();
@@ -26,7 +28,7 @@
 
 <form action="register.php" method="post">
   <div class="mb-3">
-    <label for="userName" class="form-label">Email address</label>
+    <label for="userName" class="form-label">Bruger Navn:</label>
     <input type="text" class="form-control" name="userName" aria-describedby="emailHelp">
   </div>
   <div class="mb-3">
@@ -53,7 +55,7 @@
   <option value="skorpien">Skorpien</option>
   <option value="skytte">Skytte</option>
   <option value="stenbuk">Stenbuk</option>
-  <option value="vandmand">Vandbuk</option>
+  <option value="vandmand">Vandmand</option>
   <option value="fisk">Fisk</option>
 </select>
   <div class="mb-3">

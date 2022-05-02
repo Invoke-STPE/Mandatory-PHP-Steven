@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $storedUserName = $row['userName'];
             $storedPassword = $row['password'];
 
-            if ( (strtolower($_POST['userName']) == strtolower($storedUserName)) && ($_POST['password'] == $storedPassword) ){
+            if ( (strtolower($_POST['userName']) == strtolower($storedUserName)) && (password_verify($_POST['password'], $storedPassword)) ){
 
                 setcookie("loggedin", true, time()+3600);
                 setcookie("userName", $_POST['userName'], time()+3600 );
@@ -44,20 +44,26 @@ if (isset($_COOKIE['loggedin'])) {
 
     if ($error) {
         print '<p class="text-danger">' . $error . '</p>';
-    }
-        print '
-        <form action="login.php" method="post">
-        <div class="mb-3">
-          <label for="userName" class="form-label">User Name</label>
-          <input type="userName" class="form-control"  name="userName">
+    } 
+    ?>
+        
+    <div class="container">
+        <div class="row">
+            <form action="login.php" method="post">
+            <div class="mb-3">
+                <label for="userName" class="form-label">BrugerNavn</label>
+                <input type="userName" class="form-control"  name="userName">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control"  name="password">
+            </div>
+            <button type="submit" class="btn btn-primary">Log in</button>
+            <a href="register.php">Or Register here </a>
+            </form>
         </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control"  name="password">
-        </div>
-        <button type="submit" class="btn btn-primary">Log in</button>
-        <a href="register.php">Or Register here </a>
-      </form>';
-    // }
+    </div>
+
+<?php 
     include('templates/footer.html');
 ?>

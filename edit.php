@@ -30,7 +30,7 @@ include('includes/functions.php');
                 header("Location: http://localhost/mandatory/index.php");
                 die();
             } else {
-                print '<p class="text-danger"> En fejl opstod<br>' . mysqli_error($affectedRows) . '</p><p>The query being run was: ' . '</p>'; 
+                print '<p class="text-danger"> En fejl opstod<br> </p> <p>The query being run was: </p>'; 
             }
 
         } else {
@@ -68,7 +68,7 @@ include('includes/functions.php');
           <option value="skorpien">Skorpien</option>
           <option value="skytte">Skytte</option>
           <option value="stenbuk">Stenbuk</option>
-          <option value="vandmand">Vandbuk</option>
+          <option value="vandmand">Vandmand</option>
           <option value="fisk">Fisk</option>
         </select>
           <div class="mb-3">
