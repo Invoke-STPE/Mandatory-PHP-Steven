@@ -48,8 +48,7 @@ function create_user($userName, $fullName, $password, $birthDate, $zodicSign, $f
     $favAnimal = prepare_string($favAnimal);
 
     $query = "INSERT INTO users (userName, fullName, password, birthDate, zodicSign, favAnimal) VALUES ('$userName', '$fullName', '$password', '$birthDate', '$zodicSign', '$favAnimal')";
-    print(mysqli_query($dbc, $query));
-    
+    mysqli_query($dbc, $query);    
     return mysqli_affected_rows($dbc);
 }
 

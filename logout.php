@@ -6,7 +6,7 @@ if (isset($_COOKIE["loggedin"])) {
 define('TITLE', 'Logout');
 include('templates/header.html');
 
-header("Location: http://localhost/mandatory/index.php");
+header("Location: http://localhost/index.php");
 
 include('templates/footer.html');
 ?>

@@ -15,7 +15,7 @@
 
             $affectedRows = create_user($_POST['userName'], $_POST['fullName'], $encryptedPass, $_POST['birthDate'], $_POST['zodicSign'], $_POST['favAnimal']);
             if($affectedRows == 1){
-                header("Location: http://localhost/mandatory/index.php");
+                header("Location: http://localhost/index.php");
                 die();
             } else {
                 print '<p class="text-danger"> En fejl opstod under bruger oprettelsen.  </p>'; 

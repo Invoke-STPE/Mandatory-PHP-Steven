@@ -27,7 +27,7 @@ include('includes/functions.php');
             
             $affectedRows = update_user_information($_POST['userName'], $_POST['fullName'],  $_POST['birthDate'], $_POST['zodicSign'], $_POST['favAnimal']);
             if($affectedRows == 1){
-                header("Location: http://localhost/mandatory/index.php");
+                header("Location: http://localhost/index.php");
                 die();
             } else {
                 print '<p class="text-danger"> En fejl opstod<br> </p> <p>The query being run was: </p>'; 
@@ -40,7 +40,7 @@ include('includes/functions.php');
 
     include('templates/header.html');
 ?>
-<h3>Dine informationer:</h1>
+<h3 class="mt-5">Ændre dine informationer:</h1>
 <div class="container">
     <form action="edit.php" method="post">
         <div class="mb-3">

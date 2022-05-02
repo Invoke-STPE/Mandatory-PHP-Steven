@@ -2,7 +2,7 @@
 include('includes/functions.php');
 
     if (!isset($_COOKIE['loggedin'])) {
-        header("Location: http://localhost/mandatory/login.php");
+        header("Location: http://localhost/login.php");
         die();
     }
 
@@ -19,10 +19,10 @@ include('includes/functions.php');
 
     include('templates/header.html');
 ?>
-<h3>Dine informationer:</h1>
+<h3 class="mt-5">Dine informationer:</h1>
 <div class="container">
     <div class="mb-3">
-        <label for="userName" class="form-label">Email address</label>
+        <label for="userName" class="form-label">Bruger Navn</label>
         <input type="text" class="form-control" name="userName" value="<?= $storedUserName?>" disabled>
     </div>
     <div class="mb-3">
